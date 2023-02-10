@@ -19,12 +19,16 @@ document.addEventListener("DOMContentLoaded", () =>{
     const additems = document.querySelector(".title")
     additems.classList.add('font-weight-bold','text-success');
 
-    const items = document.querySelectorAll(".list-group-item")
+    const items = document.querySelectorAll("li")
     const third = items[2]
     third.style.backgroundColor = 'green' ;
 
     for(var i = 0 ; i < items.length ; i++){
         items[i].style.fontWeight = "bold";
     }
+
+    fifth = items[4]
+    fifth.classList.add("list-group-item");
+
 });
 
