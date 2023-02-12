@@ -3,7 +3,24 @@ document.addEventListener("DOMContentLoaded",()=>{
     document.querySelector('form').onsubmit = (e) =>{
         e.preventDefault();
         var email = document.querySelector('#email').value;
-        localStorage.setItem('email',email);
-        console.log(`This is the mail stored in local storage : ${localStorage.getItem('email')}`);
+        if (localStorage.getItem('allmails') === null){
+            var allmails = [];
+            console.log('in this');
         }
+        else {
+            allmails = JSON.parse(localStorage.getItem('allmails'));
+        }
+
+        allmails.push(email)
+        localStorage.setItem('allmails',JSON.stringify(allmails))
+        
+        //to make input fields empty after login ... 
+        document.querySelector('#email').value = "";
+        document.querySelector("#password").value = "";
+
+
+        //to console.log() all the saved emails so hence we scaled it.
+        console.log(JSON.parse(localStorage.getItem('allmails')));
+        }
+
 });
