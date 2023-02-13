@@ -21,15 +21,13 @@ document.addEventListener('DOMContentLoaded',()=>{
         li.append(del)
         console.log(li);
         document.querySelector('#details').append(li)
-
     }
 
     document.querySelector('#details').onclick = (e)=>{
         if(e.target.className === "delete"){
             var id = e.target.parentNode.id;
             localStorage.removeItem(id)
-            document.getElementById(id).remove();
-                
+            document.getElementById(id).remove();            
         }
     }
 
